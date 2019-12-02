@@ -74,3 +74,5 @@ PRODUCT_COPY_FILES += \
 # Prebuild .apk applications
 PRODUCT_PACKAGES += \
     FDroid
+
+DEVICE_PACKAGE_OVERLAYS          := device/allwinner/common/overlay

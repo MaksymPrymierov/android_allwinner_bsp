@@ -11,13 +11,9 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-#
+##
 
-USE_OEM_TV_APP := true
-$(call inherit-product, device/google/atv/products/atv_base.mk)
-PRODUCT_CHARACTERISTICS := tv
-PRODUCT_AAPT_PREF_CONFIG := tvdpi
-PRODUCT_IS_ATV := true
+$(call inherit-product, packages/services/Car/car_product/build/car.mk)
 
 PRODUCT_VENDOR_KERNEL_HEADERS := device/linaro/hikey/kernel-headers
 
@@ -45,6 +41,8 @@ PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-service \
     android.hardware.bluetooth.audio@2.0-impl \
     android.hardware.bluetooth@1.0-service.btlinux \
+    android.hardware.automotive.vehicle@2.0-service \
+    android.hardware.automotive.vehicle@2.0-impl \
 
 PRODUCT_PACKAGES += libGLES_android
 
@@ -61,6 +59,9 @@ PRODUCT_PACKAGES += memtrack.default \
     android.hardware.memtrack@1.0-service \
     android.hardware.memtrack@1.0-impl \
 
+PRODUCT_PACKAGES += \
+     Launcher3 \
+
 # PowerHAL
 PRODUCT_PACKAGES += \
         android.hardware.power@1.1-impl \
@@ -74,21 +75,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.keymaster@3.0-impl \
     android.hardware.keymaster@3.0-service \
-
-PRODUCT_PACKAGES += \
-    TvSettings \
-    LiveTv \
-    google-tv-pairing-protocol \
-    TvProvision \
-    LeanbackSampleApp \
-    TvSampleLeanbackLauncher \
-    TvProvider \
-    SettingsIntelligence \
-    tv_input.default \
-    com.android.media.tv.remoteprovider \
-    InputDevices \
-
-PRODUCT_PROPERTY_OVERRIDES += ro.sf.lcd_density=260
 
 # Include BT modules    
 $(call inherit-product, device/linaro/hikey/wpan/ti-wpan-products.mk)
