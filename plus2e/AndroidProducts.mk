@@ -19,3 +19,5 @@ PRODUCT_MAKEFILES := \
 
 COMMON_LUNCH_CHOICES := \
     orangepi_plus2e-userdebug
+
+BOARD_KERNEL_CMDLINE += resolution=1280x720

@@ -33,6 +33,7 @@ on fs
 
 on late-fs
     mount_all /vendor/etc/fstab.orangepi_plus2e --late
+    swapon_all /vendor/etc/fstab.orangepi_plus2e
 
 on post-fs
     # set RLIMIT_MEMLOCK to 8MB

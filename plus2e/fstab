@@ -12,3 +12,5 @@
 
 # External memory
 /devices/platform/soc/*/usb*                                 auto            auto    defaults                              voldmanaged=usb:auto,encryptable=userdata
+
+/dev/block/zram0 none swap defaults zramsize=500000000,swapprio=<swap partition priority>
